@@ -1,0 +1,4 @@
+## 2024-03-24 - [Anti-Clickjacking on Static Branches]
+**Vulnerability:** Clickjacking risk. The `index.html` file includes a `<meta>` tag with a Content Security Policy (CSP) that specifies `frame-ancestors 'none'`. However, browsers ignore the `frame-ancestors` directive when it is delivered via a `<meta>` tag (it only works via HTTP response headers). Since this is a static branch (e.g., gh-pages) where setting HTTP headers is not possible, the site remains vulnerable to being framed.
+**Learning:** The `frame-ancestors` directive is completely ineffective in `<meta>` tags. When deploying static HTML where server configurations are not possible, alternative mitigation must be employed to prevent UI redress attacks.
+**Prevention:** Implement a client-side frame-busting script (e.g., hiding the body and only displaying it if `self === top`) directly in `index.html` as a fallback defense when HTTP headers cannot be set.
