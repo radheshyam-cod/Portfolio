@@ -1,0 +1,3 @@
+## 2025-01-21 - Added dynamic aria labels to mapped icon links
+**Learning:** Screen reader users can struggle to distinguish icon-only links when they appear in mapped collections like lists of projects, because standard labels or missing labels create duplicate or uninformative readout text.
+**Action:** Always provide dynamic, context-specific text for `aria-label` and `title` attributes (e.g. `aria-label={"View source code for " + project.title}`) for identical icons inside mapped lists or cards.
