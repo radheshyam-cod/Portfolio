@@ -73,6 +73,19 @@
     </script>
     <script type="module" crossorigin src="/Portfolio/assets/index-C2OqsDc9.js"></script>
     <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-BjQz_vir.css">
+
+    <!-- Security: Client-side frame-busting to prevent clickjacking.
+         Because CSP frame-ancestors is ignored in <meta> tags, we implement
+         a script-based defense. -->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+      if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

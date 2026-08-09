@@ -1,0 +1,4 @@
+## 2025-01-28 - [Clickjacking Defense on Static Branches]
+**Vulnerability:** Clickjacking (UI redressing) risk on compiled/static artifacts (like `gh-pages` branch) where HTTP headers cannot be set.
+**Learning:** CSP `frame-ancestors` directives are ineffective when defined in `<meta>` tags. The browser simply ignores them. Without server-side HTTP headers or proper client-side defenses, an application hosted statically remains vulnerable to framing attacks, bypassing intended anti-clickjacking policies.
+**Prevention:** Always implement a client-side frame-busting script (e.g., hiding the body by default and revealing it only if `self === top`, otherwise redirecting `top.location = self.location`) directly in `index.html` for compiled/static deployments to ensure effective defense.
