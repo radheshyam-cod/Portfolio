@@ -1,0 +1,3 @@
+## 2025-01-20 - Dynamic ARIA Labels for Icon-Only Links in Lists
+**Learning:** When using icon-only links inside mapped lists or grids (like portfolio project cards), static aria-labels (e.g. "View on GitHub") result in multiple identical links for screen reader users, confusing navigation.
+**Action:** Always append dynamic, context-specific text (e.g., incorporating the item's title like \`aria-label={"View " + project.title + " on GitHub"}\`) to distinguish each link within the collection.
