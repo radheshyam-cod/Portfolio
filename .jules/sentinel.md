@@ -1,0 +1,4 @@
+## 2024-08-11 - [CRITICAL] Prevent Clickjacking on Static Branch
+**Vulnerability:** The static branch (gh-pages) was vulnerable to clickjacking attacks despite having a Content Security Policy (CSP) with `frame-ancestors 'none'` in a `<meta>` tag.
+**Learning:** CSP `frame-ancestors` directives are ignored by browsers when specified within `<meta>` tags. Since HTTP headers cannot be configured on this static hosting environment, the application remained vulnerable to being framed by malicious sites.
+**Prevention:** When securing static/compiled branches against clickjacking, always implement a client-side frame-busting script directly in `index.html`. This script should verify that the current window is the top-level window (`window.self === window.top`) and redirect or break out if framed.
