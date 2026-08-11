@@ -1,0 +1,4 @@
+## 2024-03-24 - Client-Side Frame Busting for Static Pages
+**Vulnerability:** Clickjacking via embedding in an `<iframe>`. The `frame-ancestors` Content Security Policy (CSP) directive is ignored when used within `<meta>` tags (as is the case in this statically hosted `gh-pages` branch), rendering the application susceptible to UI redressing.
+**Learning:** `frame-ancestors` and `X-Frame-Options` must be delivered as HTTP headers. Since static hosting (like GitHub Pages without a custom configuration or edge functions) cannot send HTTP headers, the standard `<meta>` tag fallback is ineffective against framing attacks.
+**Prevention:** Implement a standard client-side frame-busting script inline in `index.html`. This pattern initially hides the `body` via a `<style>` tag, and only reveals it (or navigates the top window away) if `self === top` using Javascript.
