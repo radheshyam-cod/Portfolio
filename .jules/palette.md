@@ -1,0 +1,3 @@
+## 2024-05-18 - Added descriptive aria-labels to external links
+**Learning:** Icon-only links (like GitHub and Live Demo buttons) within iterated project cards fail accessibility standards if they lack screen-reader-friendly descriptions.
+**Action:** Always add descriptive `aria-label` attributes to icon-only links. Within mapped collections (like lists or grids), incorporate context-specific details (e.g., `project.title`) so that screen readers can distinguish between multiple identical icons.
