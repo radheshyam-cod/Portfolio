@@ -1,0 +1,3 @@
+## 2024-02-14 - Improve Screen Reader Context for Icon-Only Links in Mapped Collections
+**Learning:** When multiple identical icon-only links are rendered within a mapped collection (like a grid of project cards with GitHub icons), providing generic "GitHub" aria-labels results in repetitive, confusing readouts for screen reader users (e.g., "Link, GitHub", "Link, GitHub").
+**Action:** Always append context-specific variables (like the item's title or ID) to both `aria-label` and `title` attributes for icon-only links inside mapped lists (e.g., `` aria-label={`View source code for ${project.title} on GitHub`} ``).
