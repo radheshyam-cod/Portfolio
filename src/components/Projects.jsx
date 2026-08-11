@@ -364,12 +364,12 @@ const Projects = () => {
 
                   <div style={{ display: 'flex', gap: '8px', transform: 'translateZ(10px)' }}>
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }} onClick={(e) => e.stopPropagation()}>
+                      <a href={project.github} target="_blank" rel="noreferrer" aria-label={`View source code for ${project.title} on GitHub`} title={`View source code for ${project.title} on GitHub`} style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }} onClick={(e) => e.stopPropagation()}>
                         <Github size={18} />
                       </a>
                     )}
                     {project.live && (
-                      <a href={project.live} target="_blank" rel="noreferrer" style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }} onClick={(e) => e.stopPropagation()}>
+                      <a href={project.live} target="_blank" rel="noreferrer" aria-label={`View live demo for ${project.title}`} title={`View live demo for ${project.title}`} style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }} onClick={(e) => e.stopPropagation()}>
                         <ExternalLink size={18} />
                       </a>
                     )}
