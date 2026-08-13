@@ -1,0 +1,3 @@
+## 2025-02-14 - Dynamic ARIA labels for icon links in mapped collections
+**Learning:** Icon-only links inside mapped lists or grids (like project cards) create ambiguity for screen reader users if they lack context. Identical generic labels (e.g., "GitHub") fail to identify *which* item they belong to.
+**Action:** Use dynamic, context-specific text incorporating the item's title (e.g., `aria-label={"View source code for " + project.title}`) to ensure screen reader users can distinguish between multiple identical icons.
