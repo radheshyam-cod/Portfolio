@@ -1,0 +1,4 @@
+## 2024-08-14 - Meta CSP Frame-Ancestors Limitation
+**Vulnerability:** Clickjacking vulnerability due to `frame-ancestors` directives being ignored in `<meta>` CSP tags on compiled static branches where HTTP headers cannot be set.
+**Learning:** Browsers do not respect `frame-ancestors` or `X-Frame-Options` when defined in a `<meta>` tag, leaving the site vulnerable to framing/clickjacking even if explicitly defined there.
+**Prevention:** Implement a client-side frame-busting script directly in `index.html` using a default-hidden style (e.g., `<style id="antiClickjack">`) that is removed by JavaScript when the page loads as the top window.
