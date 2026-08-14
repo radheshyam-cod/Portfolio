@@ -5,6 +5,17 @@
     <link rel="icon" type="image/png" href="/Portfolio/images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Security: Anti-Clickjacking Frame Busting Script -->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+      if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
+
     <!-- Security: Content Security Policy.
          Allow-lists the external origins the app actually talks to:
          - api.github.com            (GitHub REST API: profile, repos, languages)
